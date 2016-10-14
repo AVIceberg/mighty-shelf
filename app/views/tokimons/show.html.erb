@@ -52,7 +52,7 @@
 
 <p>
   <strong>Trainer:</strong>
-  <%= @tokimon.trainer_id %>
+  <%= link_to @tokimon.trainer.name, trainer_path(:id=> @tokimon.trainer_id)%>
 </p>
 
 <%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |

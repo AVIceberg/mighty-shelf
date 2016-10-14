@@ -3,8 +3,14 @@ class Trainer < ActiveRecord::Base
 
   # LEVEL CALCUALTION
   before_save :calculate_level
+  
   def calculate_level
-    @level ||= 1
+    iTemp = tokimons.where(trainer_id: self.id).count
+    if (iTemp < 3)
+      self.level = 1
+    else
+      self.level = (3 + iTemp) / 3
+    end
   end
 
   # Form validation

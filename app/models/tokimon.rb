@@ -1,10 +1,10 @@
 class Tokimon < ActiveRecord::Base
-  belongs_to :trainer, counter_cache: true
+  belongs_to :trainer
   before_save :calculate_total
 
   # TOTAL CALCULATION
   def calculate_total
-      @total ||= fly + fight + fire + water + electric + ice
+      self.total = fly + fight + fire + water + electric + ice
   end
 
   # Validations for creation / editing of a tokimon
@@ -12,6 +12,7 @@ class Tokimon < ActiveRecord::Base
   validates_associated :trainer
 
   validates :name, presence: true
+  validates :trainer_id, presence: true
   validates :weight, numericality: true
   validates :height, numericality: true
   validates :fly, numericality: { only_integer: true}
