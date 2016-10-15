@@ -1,6 +1,9 @@
 class Tokimon < ActiveRecord::Base
   belongs_to :trainer
   before_save :calculate_total
+  after_save do
+    self.trainer.save # Automatically modifies trainer level with every tokimon update
+  end
 
   # TOTAL CALCULATION
   def calculate_total

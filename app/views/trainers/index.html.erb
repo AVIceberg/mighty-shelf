@@ -16,8 +16,8 @@
       <tr>
         <td><%= link_to trainer.name, trainer %></td>
         <td><%= trainer.level %></td>
-        <td><%= link_to 'Edit Trainer', edit_trainer_path(trainer) %> | </td>
-        <td><%= link_to ' Destroy Trainer', trainer, method: :delete, data: { confirm: 'Deleting this trainer will delete all associated tokimon. Are you sure?' } %></td>
+        <td class="option"><%= link_to 'Edit Trainer', edit_trainer_path(trainer) %></td>
+        <td class="option"><%= link_to ' Destroy Trainer', trainer, method: :delete, data: { confirm: 'Deleting this trainer will delete all associated tokimon. Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

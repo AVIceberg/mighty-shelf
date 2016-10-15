@@ -34,8 +34,8 @@
         <td><%= tokimon.ice %></td>
         <td><%= tokimon.total %></td>
         <td><%= link_to tokimon.trainer.name, trainer_path(:id=> tokimon.trainer_id) %></td>
-        <td><%= link_to 'Edit Tokimon', edit_tokimon_path(tokimon) %> </td>
-        <td><%= link_to 'Destroy Tokimon', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="option"><%= link_to 'Edit Tokimon', edit_tokimon_path(tokimon) %> </td>
+        <td class="option"><%= link_to 'Destroy Tokimon', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

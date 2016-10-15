@@ -3,7 +3,7 @@ class Trainer < ActiveRecord::Base
 
   # LEVEL CALCUALTION
   before_save :calculate_level
-  
+
   def calculate_level
     iTemp = tokimons.where(trainer_id: self.id).count
     if (iTemp < 3)
