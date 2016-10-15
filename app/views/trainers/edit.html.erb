@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @trainer %> |
-<%= link_to 'Back', trainers_path %>
+<%= button_to "Show Trainer's details", @trainer, :class => "button", :method => :get %>
+<%= button_to 'Return to Trainer Listings', trainers_path, :class => "button", :method => :get %>

@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @tokimon %> |
-<%= link_to 'Back', tokimons_path %>
+<%= button_to "Show Tokimon's details", @tokimon, :class => "button", :method => :get %>
+<%= button_to 'Return to Tokimon Listings', tokimons_path, :class => "button", :method => :get %>

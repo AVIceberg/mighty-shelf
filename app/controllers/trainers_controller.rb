@@ -16,6 +16,7 @@ class TrainersController < ApplicationController
       @trainer = Trainer.find_by(id: params[:id])
       @trainer.tokimons.delete_all
       @trainer.level = 1
+      @trainer.save
 
       redirect_to :action => 'show', :id => @trainer.id
   end
