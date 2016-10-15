@@ -12,6 +12,14 @@ class TrainersController < ApplicationController
   def show
   end
 
+  def delete_dependents
+      @trainer = Trainer.find_by(id: params[:id])
+      @trainer.tokimons.delete_all
+      @trainer.level = 1
+
+      redirect_to :action => 'show', :id => @trainer.id
+  end
+
   # GET /trainers/new
   def new
     @trainer = Trainer.new

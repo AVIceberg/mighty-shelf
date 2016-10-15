@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :trainers do
+    member do
+      delete 'delete_dependents'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
