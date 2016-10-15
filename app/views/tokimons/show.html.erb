@@ -1,59 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tokimon.name %>
-</p>
+<h1> Listing for <%= @tokimon.name %></h1>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @tokimon.weight %>
-</p>
+<table id="tokimon-info">
+    <tr>
+      <th>Name</th>
+      <td><%= @tokimon.name %></td>
+    </tr>
+    <tr>
+      <th>Weight</th>
+      <td><%= @tokimon.weight %></td>
+    </tr>
+    <tr>
+      <th>Height</th>
+      <td><%= @tokimon.height %></td>
+    </tr>
+    <tr>
+      <th>Fly</th>
+      <td><%= @tokimon.fly %></td>
+    </tr>
+    <tr>
+      <th>Fight</th>
+      <td><%= @tokimon.fight %></td>
+    </tr>
+    <tr>
+      <th>Fire</th>
+      <td><%= @tokimon.fire %></td>
+    </tr>
+    <tr>
+      <th>Water</th>
+      <td><%= @tokimon.water %></td>
+    </tr>
+    <tr>
+      <th>Electric</th>
+      <td><%= @tokimon.electric %></td>
+    </tr>
+    <tr>
+      <th>Ice</th>
+      <td><%= @tokimon.ice %></td>
+    </tr>
+    <tr>
+      <th>Trainer</th>
+      <td><%= link_to @tokimon.trainer.name, trainer_path(:id=> @tokimon.trainer_id)%></td>
+    <tr>
+      <th>Total</th>
+      <td><%= @tokimon.total %></td>
+    </tr>
+</table>
 
-<p>
-  <strong>Height:</strong>
-  <%= @tokimon.height %>
-</p>
-
-<p>
-  <strong>Fly:</strong>
-  <%= @tokimon.fly %>
-</p>
-
-<p>
-  <strong>Fight:</strong>
-  <%= @tokimon.fight %>
-</p>
-
-<p>
-  <strong>Fire:</strong>
-  <%= @tokimon.fire %>
-</p>
-
-<p>
-  <strong>Water:</strong>
-  <%= @tokimon.water %>
-</p>
-
-<p>
-  <strong>Electric:</strong>
-  <%= @tokimon.electric %>
-</p>
-
-<p>
-  <strong>Ice:</strong>
-  <%= @tokimon.ice %>
-</p>
-
-<p>
-  <strong>Total:</strong>
-  <%= @tokimon.total %>
-</p>
-
-<p>
-  <strong>Trainer:</strong>
-  <%= link_to @tokimon.trainer.name, trainer_path(:id=> @tokimon.trainer_id)%>
-</p>
-
-<%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |
-<%= link_to 'Back', tokimons_path %>
+<%= button_to 'Edit Tokimon', edit_tokimon_path(@tokimon), :class => "button", :method => :get %>
+<%= button_to 'Back to Tokimon Listings', tokimons_path, :class => "button", :method => :get %>
