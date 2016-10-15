@@ -1,7 +1,7 @@
 class Trainer < ActiveRecord::Base
-  has_many :tokimons
+  has_many :tokimons, dependent: :destroy
 
-  # LEVEL CALCUALTION
+  # LEVEL CALCULATION
   before_save :calculate_level
 
   def calculate_level

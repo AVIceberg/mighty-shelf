@@ -1,6 +1,7 @@
 class Tokimon < ActiveRecord::Base
   belongs_to :trainer
   before_save :calculate_total
+
   after_save do
     self.trainer.save # Automatically modifies trainer level with every tokimon update
   end
@@ -15,6 +16,7 @@ class Tokimon < ActiveRecord::Base
   validates_associated :trainer
 
   validates :name, presence: true
+  validates :name, uniqueness: true
   validates :trainer_id, presence: true
   validates :weight, numericality: true
   validates :height, numericality: true
